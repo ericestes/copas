@@ -220,12 +220,12 @@ module.exports = {
                     modules: true,
                     sourceMap: shouldUseSourceMap,
                     importLoaders: 2,
-                    localIdentName: '[name]__[local]___[hash:base64:5]'
-                  }
+                    localIdentName: '[name]__[local]___[hash:base64:5]',
+                  },
                 },
-                'sass-loader'
-              ]
-            })
+                'sass-loader',
+              ],
+            }),
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
