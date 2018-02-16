@@ -12,6 +12,15 @@
   outline: none;
   display: block;
   text-transform: uppercase;
+
+  // Disable text selection and long press
+  -webkit-touch-callout: none;
+  user-select: none;
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: default;
+  }
 }
 
 // Color variations

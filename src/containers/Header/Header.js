@@ -13,6 +13,7 @@ class Header extends Component {
           <img src={logo} className={styles.logo} alt="logo" />
           <h1 className={styles.title}>Welcome to React</h1>
           <Button
+            disabled
             color="secondary"
             size="large"
             onClick={() => {
