@@ -5,15 +5,14 @@ import classNames from 'classnames/bind';
 import styles from './Button.scss';
 
 export default function Button(props) {
-  const { children, onClick } = props;
-  const color = props.color || 'primary';
-  const size = props.size || 'normal';
+  const { color, size, children, onClick, ...rest } = props;
 
   return (
     <button
       style={{ color }}
       className={classNames(styles.button, styles[size], styles[color])}
       onClick={onClick}
+      {...rest}
     >
       {children}
     </button>
@@ -27,5 +26,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  color: 'primary',
+  size: 'normal',
   onClick: () => {},
 };
