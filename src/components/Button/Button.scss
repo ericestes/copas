@@ -1,0 +1,44 @@
+// Common styles
+.button {
+  // Remove default styling
+  background-color: transparent;
+  border: 2px solid;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  -webkit-font-smoothing: inherit;
+  margin: 0;
+  outline: none;
+  display: block;
+  text-transform: uppercase;
+}
+
+// Color variations
+.primary {
+  color: #00f;
+}
+
+.secondary {
+  color: #fff000;
+}
+
+.tertiary {
+  color: #096600;
+}
+
+// Size variations
+.normal {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.small {
+  padding: 8px;
+  font-size: 12px;
+}
+
+.large {
+  padding: 12px;
+  font-size: 20px;
+}

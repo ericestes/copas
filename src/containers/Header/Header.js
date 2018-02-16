@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo.svg';
+import Button from '../../components/Button';
 import styles from './Header.scss';
 
 class Header extends Component {
@@ -11,6 +12,15 @@ class Header extends Component {
         <header className={styles.header}>
           <img src={logo} className={styles.logo} alt="logo" />
           <h1 className={styles.title}>Welcome to React</h1>
+          <Button
+            color="secondary"
+            size="large"
+            onClick={() => {
+              console.log('clicked!');
+            }}
+          >
+            Click Me!
+          </Button>
         </header>
         <nav>
           <ul className={styles.nav}>
