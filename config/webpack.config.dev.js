@@ -130,12 +130,17 @@ module.exports = {
           // smaller than specified limit in bytes as data URLs to avoid requests.
           // A missing `test` is equivalent to a match.
           {
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: require.resolve('url-loader'),
-            options: {
-              limit: 10000,
-              name: 'static/media/[name].[hash:8].[ext]',
-            },
+            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
+            use: [
+              {
+                loader: require.resolve('url-loader'),
+                options: {
+                  limit: 10000,
+                  name: 'static/media/[name].[hash:8].[ext]',
+                },
+              },
+              require.resolve('image-webpack-loader'),
+            ],
           },
           // Process JS with Babel.
           {
@@ -228,10 +233,15 @@ module.exports = {
               /\.png$/,
               /\.scss$/,
             ],
-            loader: require.resolve('file-loader'),
-            options: {
-              name: 'static/media/[name].[hash:8].[ext]',
-            },
+            use: [
+              {
+                loader: require.resolve('file-loader'),
+                options: {
+                  name: 'static/media/[name].[hash:8].[ext]',
+                },
+              },
+              require.resolve('image-webpack-loader'),
+            ],
           },
         ],
       },

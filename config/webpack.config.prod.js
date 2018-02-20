@@ -134,12 +134,17 @@ module.exports = {
           // "url" loader works just like "file" loader but it also embeds
           // assets smaller than specified size as data URLs to avoid requests.
           {
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: require.resolve('url-loader'),
-            options: {
-              limit: 10000,
-              name: 'static/media/[name].[hash:8].[ext]',
-            },
+            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
+            use: [
+              {
+                loader: require.resolve('url-loader'),
+                options: {
+                  limit: 10000,
+                  name: 'static/media/[name].[hash:8].[ext]',
+                },
+              },
+              require.resolve('image-webpack-loader'),
+            ],
           },
           // Process JS with Babel.
           {
@@ -232,7 +237,6 @@ module.exports = {
           // This loader doesn't use a "test" so it will catch all modules
           // that fall through the other loaders.
           {
-            loader: require.resolve('file-loader'),
             // Exclude `js` files to keep "css" loader working as it injects
             // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
@@ -248,9 +252,15 @@ module.exports = {
               /\.png$/,
               /\.scss$/,
             ],
-            options: {
-              name: 'static/media/[name].[hash:8].[ext]',
-            },
+            use: [
+              {
+                loader: require.resolve('file-loader'),
+                options: {
+                  name: 'static/media/[name].[hash:8].[ext]',
+                },
+              },
+              require.resolve('image-webpack-loader'),
+            ],
           },
           // ** STOP ** Are you adding a new loader?
           // Make sure to add the new loader(s) before the "file" loader.
