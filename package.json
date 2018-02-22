@@ -30,7 +30,6 @@
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
-    "husky": "^0.14.3",
     "image-webpack-loader": "^4.1.0",
     "jest": "20.0.4",
     "jest-enzyme": "^4.2.0",
@@ -76,12 +75,17 @@
   "scripts": {
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "precommit": "lint-staged",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "devDependencies": {
+    "husky": "^0.15.0-rc.8",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0"
   },
