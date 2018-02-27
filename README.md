@@ -52,6 +52,14 @@ Files within `src/` should be grouped them by feature. For example, a button fea
 
 Most of the files are self-explanatory. `Button.md` contains styleguide information, and `index.js` is a convenience file that exports the React component found in `Button.js`.
 
+## Using Stylguidist
+
+Storybook is a development environment for React UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
+
+We can utilize this tool to develop components in isolation, without worrying about authentication, routing, translations, etc.
+
+The styleguide will also be deployed and referenced by the visual team.
+
 ## Technologies Used
 
 ### Scripting
@@ -68,7 +76,7 @@ The app utilizes [CSS Modules](https://github.com/css-modules/css-modules) and [
   
 The app uses [Jest](https://facebook.github.io/jest/) as its test runner, along with [Enzyme](http://airbnb.io/enzyme/) to make it easier to assert, manipulate, and traverse the output of React Components.
 
-Linting is performed with a combination of [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/) and [Prettier](https://prettier.io/)
+Linting is performed with a combination of [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/) and [Prettier](https://prettier.io/).
 
 An [EditorConfig](http://editorconfig.org/) file is also provided.
 
