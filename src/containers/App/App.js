@@ -1,7 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
+import Button from '../../components/Button';
 import Header from '../Header';
+import { changeColor } from '../Header/actions';
 
 const BasicExample = () => (
   <Router>
@@ -15,11 +18,20 @@ const BasicExample = () => (
   </Router>
 );
 
-const Home = () => (
+const Home = connect()(({ dispatch }) => (
   <div>
     <h2>Home</h2>
+    <Button
+      color="primary"
+      size="large"
+      onClick={() => {
+        dispatch(changeColor('red'));
+      }}
+    >
+      Change Color
+    </Button>
   </div>
-);
+));
 
 const About = () => (
   <div>
